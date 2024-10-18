@@ -1,5 +1,13 @@
-﻿  Classes.cpp
+﻿  Applicant.cpp
+C:\Users\vltally\Desktop\OOP_PROJECT\OOP_PROJECT\Faculty.h(4,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  (компиляция исходного файла "Applicant.cpp")
+  
   main.cpp
+C:\Users\vltally\Desktop\OOP_PROJECT\OOP_PROJECT\Faculty.h(4,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  (компиляция исходного файла "main.cpp")
+  
+C:\Users\vltally\Desktop\OOP_PROJECT\OOP_PROJECT\main.cpp(201,46): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\vltally\Desktop\OOP_PROJECT\OOP_PROJECT\main.cpp(220,46): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
   Создание кода...
-  Classes.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  OOP_PROJECT.vcxproj -> C:\Users\vltally\source\repos\OOP_PROJECT\x64\Debug\OOP_PROJECT.exe
+  Applicant.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  OOP_PROJECT.vcxproj -> C:\Users\vltally\Desktop\OOP_PROJECT\x64\Debug\OOP_PROJECT.exe

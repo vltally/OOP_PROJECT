@@ -120,15 +120,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Classes.cpp" />
+    <ClCompile Include="Applicant.cpp" />
+    <ClCompile Include="Exam.cpp" />
+    <ClCompile Include="Faculty.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Mark.cpp" />
+    <ClCompile Include="Professor.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Classes.h" />
-    <ClInclude Include="MyForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
+    <ClInclude Include="Applicant.h" />
+    <ClInclude Include="Exam.h" />
+    <ClInclude Include="Faculty.h" />
+    <ClInclude Include="Mark.h" />
+    <ClInclude Include="Professor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
