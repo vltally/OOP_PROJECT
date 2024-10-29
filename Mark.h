@@ -14,8 +14,8 @@ public:
     Mark() {};
     // Конструктор
     Mark(Applicant& applicant, int mark, bool appealStatus )
-        : applicant(applicant), mark(mark), appealStatus(appealStatus = false) {}
-
+        : applicant(applicant), mark(mark), appealStatus(appealStatus ) {}
+    Mark(Applicant& applicant, int mark) : applicant(applicant), mark(mark), appealStatus(appealStatus = false) {};
     // Методи доступу
     const Applicant& getApplicant()  const { return applicant; }
      int getMark() const { return mark; }

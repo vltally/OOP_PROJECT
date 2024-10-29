@@ -121,17 +121,25 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Applicant.cpp" />
+    <ClCompile Include="CombinedExam.cpp" />
     <ClCompile Include="Exam.cpp" />
     <ClCompile Include="Faculty.cpp" />
+    <ClCompile Include="GraduatedApplicant.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mark.cpp" />
+    <ClCompile Include="OfflineExam.cpp" />
+    <ClCompile Include="OnlineExam.cpp" />
     <ClCompile Include="Professor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Applicant.h" />
+    <ClInclude Include="CombinedExam.h" />
     <ClInclude Include="Exam.h" />
     <ClInclude Include="Faculty.h" />
+    <ClInclude Include="GraduatedApplicant.h" />
     <ClInclude Include="Mark.h" />
+    <ClInclude Include="OfflineExam.h" />
+    <ClInclude Include="OnlineExam.h" />
     <ClInclude Include="Professor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

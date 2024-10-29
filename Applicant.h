@@ -16,10 +16,10 @@ private:
     std::string gender;
     int age;
     int facultyId;
-
-public:
+protected:
     std::string contract;
     std::string form;
+public:
     std::string group;
 
     static int applicantCount;
