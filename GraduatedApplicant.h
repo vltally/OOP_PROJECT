@@ -26,6 +26,10 @@ public:
         : Applicant(name, surname, age, facultyId) {
         diplomaType = diploma;
     }
+
+    void showInformation() {
+        showInfo();
+    }
 };
 
 // Private успадкування - публічні члени стають приватними

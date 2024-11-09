@@ -1,23 +1,36 @@
 #ifndef PROFESSOR_H
 #define PROFESSOR_H
 #include <string>
+#include <iostream>
 
-#include "Exam.h"
-class Professor {
+//#include "Exam.h"
+class Exam;
+
+#include "Person.h"
+class Professor : virtual public Person {
 private:
     std::string lastName;    // Призвище
     std::string firstName;   // Ім'я
     std::string middleName;  // По батькові
-    std::string education;    // Освіта
+    std::string education;   // Освіта
+    std::string department;  
     int experience;           // Досвід (в роках)
 
 public:
     // Конструктор
-    Professor();
+    Professor() : lastName(""), firstName(""), middleName(""), education(""), experience(0) {};
+
     Professor(std::string firstName, std::string lastName) : firstName(firstName), lastName(lastName) {
         middleName = "";
         education = " ";
         experience = 0;
+    }
+    Professor(std::string department, int experience) : department(department), experience(experience) {}
+
+    void showInfo() const override; 
+
+    virtual ~Professor() {
+        std::cout << "Professor destructor\n";
     }
 
     // Методи для встановлення даних
@@ -38,6 +51,14 @@ public:
     void evaluateExam(Exam& exam); // Логіку реалізуєте самостійно
 
     void reviewAppeals(Exam& exam);
+
+    void Write(const std::string& filename) const override {
+
+    }
+
+    void Read(const std::string& filename) override {
+
+    }
 };
 
 #endif // PROFESSOR_H

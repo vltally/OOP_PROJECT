@@ -3,7 +3,11 @@
 #include "Applicant.h"
 
 // Конструктор
-Professor::Professor() : lastName(""), firstName(""), middleName(""), education(""), experience(0) {}
+
+void Professor::showInfo() const
+{
+    std::cout << "Professor name" << lastName << " " << firstName << "\n";
+}
 
 // Методи для встановлення даних
 void Professor::setLastName(const std::string& lastName) { this->lastName = lastName; }

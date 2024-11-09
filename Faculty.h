@@ -1,3 +1,6 @@
+#ifndef FACULTY_H
+#define FACULTY_H
+
 #include <utility>
 #include <vector>
 #include <string>
@@ -49,3 +52,6 @@ public:
 
     void addApplicantsFaculty(std::vector<Mark> applicants);
 };
+
+#endif // FACULTY_H
+

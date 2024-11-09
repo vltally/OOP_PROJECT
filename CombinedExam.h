@@ -28,6 +28,8 @@ public:
     using Exam::setScoreForApplicant;
     using Exam::showApplicantsGrades;
 
+
+
 };
 
 

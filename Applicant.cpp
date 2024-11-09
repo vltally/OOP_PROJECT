@@ -15,22 +15,24 @@ int Applicant::getApplicantCount() {
 }
 
 // Конструктори Applicant
-Applicant::Applicant()
-    : name("Невідомо"), surname("Невідомо"), gender("Стать"), age(0), facultyId(0),
-    contract("Немає"), form("Денна"), group("Немає") {
-    applicantCount++;
-}
+//Applicant::Applicant()
+//    : name("Невідомо"), surname("Невідомо"), gender("Стать"), age(0), facultyId(0),
+//    contract("Немає"), form("Денна"), group("Немає") {
+//    applicantCount++;
+//}
 
 Applicant::Applicant(std::string name, std::string surname, int age, int facultyId,
     std::string gender, std::string contract, std::string form, std::string group)
     : name(name), surname(surname), gender(gender), age(age), facultyId(facultyId),
     contract(contract), form(form), group(group) {
     applicantCount++;
+    applicants.push_back(this);  // Додаємо вказівник на новий об'єкт у контейнер
 }
 
 
 Applicant::Applicant(int age, std::string surname) : age(age), surname(surname) {
     applicantCount++;
+    applicants.push_back(this);  // Додаємо вказівник на новий об'єкт у контейнер
 }
 
 // Методи Applicant
@@ -115,3 +117,5 @@ void Applicant::appealForMark(Exam& exam) {
     }
 }
 
+
+std::vector<Applicant*> Applicant::applicants;

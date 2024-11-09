@@ -1,9 +1,27 @@
-﻿  CombinedExam.cpp
-  OfflineExam.cpp
+﻿  Admin.cpp
+C:\Users\vltally\Desktop\OOP_PROJECT\OOP_PROJECT\Faculty.h(7,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  (компиляция исходного файла "Admin.cpp")
+  
+  Applicant.cpp
+C:\Users\vltally\Desktop\OOP_PROJECT\OOP_PROJECT\Faculty.h(7,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  (компиляция исходного файла "Applicant.cpp")
+  
+  Assistant.cpp
+  CombinedExam.cpp
+  Exam.cpp
+  Faculty.cpp
+C:\Users\vltally\Desktop\OOP_PROJECT\OOP_PROJECT\Faculty.h(7,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  (компиляция исходного файла "Faculty.cpp")
+  
   main.cpp
-C:\Users\vltally\Desktop\OOP_PROJECT\OOP_PROJECT\Faculty.h(4,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+C:\Users\vltally\Desktop\OOP_PROJECT\OOP_PROJECT\Faculty.h(7,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
   (компиляция исходного файла "main.cpp")
   
+  Mark.cpp
+  OfflineExam.cpp
+  OnlineExam.cpp
+  Person.cpp
+  Professor.cpp
   Создание кода...
-  Applicant.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  Admin.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   OOP_PROJECT.vcxproj -> C:\Users\vltally\Desktop\OOP_PROJECT\x64\Debug\OOP_PROJECT.exe
