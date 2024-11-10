@@ -134,6 +134,83 @@ public:
             applicant->showInfo();
         }
     }
+
+    Applicant(int age) : age(age) {}
+
+    // Префіксне перевантаження оператора ++
+    Applicant& operator++() {
+        ++age;
+        return *this;
+    }
+
+    // Постфіксне перевантаження оператора ++
+    Applicant operator++(int) {
+        Applicant temp = *this;
+        ++(*this);  // Викликаємо префіксну версію
+        return temp;
+    }
+
+    // Префіксне перевантаження оператора --
+    Applicant& operator--() {
+        --age;
+        return *this;
+    }
+
+    // Постфіксне перевантаження оператора --
+    Applicant operator--(int) {
+        Applicant temp = *this;
+        --(*this);  // Викликаємо префіксну версію
+        return temp;
+    }
+
+    Applicant operator+(const Applicant& other) {
+        return Applicant(this->age + other.age);
+    }
+
+    // Перевантаження оператора -
+    Applicant operator-(const Applicant& other) {
+        return Applicant(this->age - other.age);
+    }
+    
+    int operator*(const Applicant& other) {
+        return this->age * other.age;
+    }
+
+    // Перевантаження оператора =
+    Applicant& operator=(const Applicant& other) {
+        if (this != &other) {
+            age = other.age;
+        }
+        return *this;
+    }
+
+    // Перевантаження оператора +=
+    Applicant& operator+=(const Applicant& other) {
+        this->age += other.age;
+        return *this;
+    }
+
+    // Перевантаження оператора -=
+    Applicant& operator-=(const Applicant& other) {
+        this->age -= other.age;
+        return *this;
+    }
+
+    // Перевантаження оператора *=
+    Applicant& operator*=(const Applicant& other) {
+        this->age *= other.age;
+        return *this;
+    }
+
+    // Перевантаження оператора []
+    int operator[](int index) {
+        if (index == 0) return age;
+        return -1;  // Для простоти
+    }
+
+    template <typename T> void setAge(T newAge) {
+        age = static_cast<int>(newAge);
+    }
 };
 
 #endif // APPLICANT_H

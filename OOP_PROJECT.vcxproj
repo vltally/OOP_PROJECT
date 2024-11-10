@@ -138,6 +138,8 @@
     <ClInclude Include="Applicant.h" />
     <ClInclude Include="Assistant.h" />
     <ClInclude Include="CombinedExam.h" />
+    <ClInclude Include="CustomClass.h" />
+    <ClInclude Include="CustomType.h" />
     <ClInclude Include="Exam.h" />
     <ClInclude Include="Faculty.h" />
     <ClInclude Include="GraduatedApplicant.h" />

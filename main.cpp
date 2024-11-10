@@ -11,6 +11,8 @@
 #include "Assistant.h"
 #include <locale>
 #include "Admin.h"
+#include "CustomClass.h"
+#include "CustomType.h"
 
 void mainMenu();
 void createApplicant();
@@ -267,128 +269,54 @@ void Service(Person* person, const std::string& filename) {
 }
 
 void main() {
-    std::locale::global(std::locale("en_US.UTF-8"));
+    
+    Applicant a(20);
+    a.showInfo(); // Age: 20
 
-   // setlocale(LC_CTYPE, "ukr");
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
+    ++a;           // Префіксне збільшення
+    a.showInfo();   // Age: 21
 
-    Person* person = new Assistant();
-    delete person;
+    a++;           // Постфіксне збільшення
+    a.showInfo();   // Age: 22
 
+    --a;           // Префіксне зменшення
+    a.showInfo();   // Age: 21
 
-    std::cout << "----------\n";
+    a--;           // Постфіксне зменшення
+    a.showInfo();   // Age: 20
 
-    //Person* person1 = new Applicant();
-    //delete person1;
-
-
-    try {
-        // Створення статичних об'єктів
-        Applicant staticApplicants[5] = {
-            Applicant("1", 1), Applicant("2", 1),
-            Applicant("3", 1), Applicant("4", 1),
-            Applicant("5", 1)
-        };
-
-        Assistant staticInstructors[5] = {
-            Assistant(), Assistant(),
-            Assistant(), Assistant(),
-            Assistant()
-        };
-
-        // Створення динамічних об'єктів
-        createObjects();
-    }
-    catch (const std::exception& e) {
-        std::cerr << "Exception in main: " << e.what() << std::endl;
-    }
-    catch (...) {
-        std::cerr << "Unknown exception in main." << std::endl;
-    }
-
-    // Очищення динамічних об'єктів
-    cleanup();
-
-    std::cout << "---------------------------------------------------\n";
-    try {
-        // Створення статичних об'єктів
-        Applicant staticApplicants[5] = {
-            Applicant("Static Applicant 1", 22),
-            Applicant("Static Applicant 2", 23),
-            Applicant("Static Applicant 3", 22),
-            Applicant("Static Applicant 4", 24),
-            Applicant("Static Applicant 5", 21)
-        };
-        int staticSize = 5;
-
-        // Створення динамічних об'єктів
-        dynamicPeople.push_back(new Applicant("Dynamic Applicant 1", 22));
-        dynamicPeople.push_back(new Applicant("Dynamic Applicant 2", 23));
-        dynamicPeople.push_back(new Applicant("Dynamic Applicant 3", 22));
-        dynamicPeople.push_back(new Applicant("Dynamic Applicant 4", 25));
-        dynamicPeople.push_back(new Applicant("Dynamic Applicant 5", 21));
-
-        // Демонстрація видалення об'єктів за віком 22 для статичних та динамічних об'єктів
-        Service_Static(staticApplicants, staticSize, 22);  // Статичні об'єкти
-        Service_Dynamic(dynamicPeople, 22);  // Динамічні об'єкти
-
-        // Виведення результатів
-        std::cout << "Remaining Static Applicants: " << staticSize << std::endl;
-        std::cout << "Remaining Dynamic Applicants: " << dynamicPeople.size() << std::endl;
-
-    }
-    catch (const std::exception& e) {
-        std::cerr << "Exception in main: " << e.what() << std::endl;
-    }
-    catch (...) {
-        std::cerr << "Unknown exception in main." << std::endl;
-    }
-
-    // Очищення пам'яті для динамічних об'єктів
-    for (auto person : dynamicPeople) {
-        delete person;
-    }
-    dynamicPeople.clear();
+    Applicant a1(20);
+    Applicant a2(25);
+    Applicant a3 = a1 + a2;  // Сума віку
+    a3.showInfo();            // Age: 45
 
 
 
-    std::cout << "------------------------------------\n";
+    Applicant a4 = a2 - a1;  // Різниця віку
+    a4.showInfo();
 
-    std::string filename = "Hello";
+    a1 += a2;
+    a1.showInfo();  // Age: 45
 
-    try {
-        // Створюємо об'єкт Applicant
-        Applicant applicant("John Doe", 25);
+    a1 -= a2;
+    a1.showInfo();  // Age: 20
 
-        // Викликаємо Service для обробки
-        Service(&applicant, filename);
-    }
-    catch (const std::exception& e) {
-        std::cerr << "Exception in main: " << e.what() << std::endl;
-    }
-    catch (...) {
-        std::cerr << "Unknown exception in main." << std::endl;
-    }
+    a1 *= a2;
+    a1.showInfo();  // Age: 500
 
+    int age = a1[0];
+    std::cout << "Age from array-like access: " << age << std::endl; // Age: 500
 
-    Applicant a1("John Doe", 25);
-    Applicant a2("Jane Smith", 22);
-    Applicant::viewAllApplicants();
+    a1.setAge(25.5);  // Шаблонна функція змінює вік
+    a1.showInfo();    // Age: 25
 
+    CustomClass<int, double, std::string, bool, char> custom(10, 3.14, "Hello", true, 'A');
+    custom.showInfo();
 
-    mainMenu();
+    CustomType customType(42, "42");
+    Wrapper<CustomType> wrapper(customType);
+    wrapper.showInfo();
 
-    Person* person11 = new Assistant();
-    person11->showInfo();
-    delete person11;
-
-    Person* person12 = new Applicant();
-    person12->showInfo();
-    delete person12;
-    Person* person13 = new Professor();
-    person13->showInfo();
-    delete person13;
 
     system("pause");
 }
