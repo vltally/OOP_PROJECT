@@ -13,6 +13,15 @@
 #include "Admin.h"
 #include "CustomClass.h"
 #include "CustomType.h"
+#include <list>
+#include <deque>
+#include <set>
+#include <map>
+#include <stack>
+#include <queue>
+#include <functional>
+#include <numeric>
+
 
 void mainMenu();
 void createApplicant();
@@ -270,52 +279,140 @@ void Service(Person* person, const std::string& filename) {
 
 void main() {
     
-    Applicant a(20);
-    a.showInfo(); // Age: 20
+    // 1.1 Vector
+    std::vector<int> vec1 = { 1, 2, 3 };
+    vec1.push_back(4);
+    vec1.pop_back();
+    vec1.at(1) = 10;
 
-    ++a;           // Префіксне збільшення
-    a.showInfo();   // Age: 21
+    std::cout << "Vector: ";
+    for (int elem : vec1) std::cout << elem << " ";
+    std::cout << std::endl;
 
-    a++;           // Постфіксне збільшення
-    a.showInfo();   // Age: 22
+    // 1.2 List
+    std::list<int> list1 = { 1, 2, 3 };
+    list1.push_front(0);
+    list1.push_back(4);
+    list1.remove(2);
 
-    --a;           // Префіксне зменшення
-    a.showInfo();   // Age: 21
+    std::cout << "List: ";
+    for (int elem : list1) std::cout << elem << " ";
+    std::cout << std::endl;
 
-    a--;           // Постфіксне зменшення
-    a.showInfo();   // Age: 20
+    // 1.3 Deque
+    std::deque<int> deque1 = { 1, 2, 3 };
+    deque1.push_front(0);
+    deque1.push_back(4);
+    deque1.pop_front();
 
-    Applicant a1(20);
-    Applicant a2(25);
-    Applicant a3 = a1 + a2;  // Сума віку
-    a3.showInfo();            // Age: 45
+    std::cout << "Deque: ";
+    for (int elem : deque1) std::cout << elem << " ";
+    std::cout << std::endl;
 
+    // 1.4 Set
+    std::set<int> set1 = { 3, 1, 4, 2 };
+    set1.insert(5);
+    set1.erase(1);
 
+    std::cout << "Set: ";
+    for (int elem : set1) std::cout << elem << " ";
+    std::cout << std::endl;
 
-    Applicant a4 = a2 - a1;  // Різниця віку
-    a4.showInfo();
+    // 1.5 Multiset
+    std::multiset<int> multiset1 = { 1, 2, 2, 3 };
+    multiset1.insert(2);
+    multiset1.erase(2);
 
-    a1 += a2;
-    a1.showInfo();  // Age: 45
+    std::cout << "Multiset: ";
+    for (int elem : multiset1) std::cout << elem << " ";
+    std::cout << std::endl;
 
-    a1 -= a2;
-    a1.showInfo();  // Age: 20
+    // 1.6 Map
+    std::map<int, std::string> map1;
+    map1[1] = "One";
+    map1[2] = "Two";
+    map1.erase(1);
 
-    a1 *= a2;
-    a1.showInfo();  // Age: 500
+    std::cout << "Map: ";
+    for (auto it = map1.begin(); it != map1.end(); ++it) {
+        std::cout << "{" << it->first << ", " << it->second << "} ";
+    }
+    std::cout << std::endl;
 
-    int age = a1[0];
-    std::cout << "Age from array-like access: " << age << std::endl; // Age: 500
+    // 1.7 Multimap
+    std::multimap<int, std::string> multimap1;
+    multimap1.insert({ 1, "One" });
+    multimap1.insert({ 1, "Another One" });
 
-    a1.setAge(25.5);  // Шаблонна функція змінює вік
-    a1.showInfo();    // Age: 25
+    std::cout << "Multimap: ";
+    for (auto it = multimap1.begin(); it != multimap1.end(); ++it) {
+        std::cout << "{" << it->first << ", " << it->second << "} ";
+    }
+    std::cout << std::endl;
 
-    CustomClass<int, double, std::string, bool, char> custom(10, 3.14, "Hello", true, 'A');
-    custom.showInfo();
+    // 1.8 Stack
+    std::stack<int> stack1;
+    stack1.push(1);
+    stack1.push(2);
+    stack1.pop();
 
-    CustomType customType(42, "42");
-    Wrapper<CustomType> wrapper(customType);
-    wrapper.showInfo();
+    std::cout << "Stack top: " << stack1.top() << std::endl;
+
+    // 1.9 Queue
+    std::queue<int> queue1;
+    queue1.push(1);
+    queue1.push(2);
+    queue1.pop();
+
+    std::cout << "Queue front: " << queue1.front() << std::endl;
+
+    // 1.10 Priority Queue
+    std::priority_queue<int> priorityQueue1;
+    priorityQueue1.push(1);
+    priorityQueue1.push(3);
+    priorityQueue1.push(2);
+    priorityQueue1.pop();
+
+    std::cout << "Priority queue top: " << priorityQueue1.top() << std::endl;
+
+    // Vector for iterators and algorithms examples
+    std::vector<int> vec2 = { 1, 2, 3, 4 };
+
+    // 2.3 Односпрямований ітератор
+    std::cout << "Vector with forward iterator: ";
+    for (auto it = vec2.begin(); it != vec2.end(); ++it) {
+        std::cout << *it << " ";
+    }
+    std::cout << std::endl;
+
+    // 2.4 Двонаправлений ітератор
+    std::list<int> list2 = { 1, 2, 3, 4 };
+    std::cout << "List with reverse iterator: ";
+    for (auto it = list2.rbegin(); it != list2.rend(); ++it) {
+        std::cout << *it << " ";
+    }
+    std::cout << std::endl;
+
+    // 2.5 Ітератор довільного доступу
+    vec2[2] = 10;
+    std::cout << "Vector after index access: ";
+    for (int elem : vec2) std::cout << elem << " ";
+    std::cout << std::endl;
+
+    // Vector for algorithms examples
+    std::vector<int> vec3 = { 1, 3, 5, 4, 2 };
+
+    // Алгоритм сортування
+    std::sort(vec3.begin(), vec3.end());
+    std::cout << "Sorted vector: ";
+    for (int elem : vec3) std::cout << elem << " ";
+    std::cout << std::endl;
+
+    // Алгоритм для обернення порядку елементів
+    std::reverse(vec3.begin(), vec3.end());
+    std::cout << "Reversed vector: ";
+    for (int elem : vec3) std::cout << elem << " ";
+    std::cout << std::endl;
 
 
     system("pause");
