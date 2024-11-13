@@ -126,6 +126,7 @@
     <ClCompile Include="CombinedExam.cpp" />
     <ClCompile Include="Exam.cpp" />
     <ClCompile Include="Faculty.cpp" />
+    <ClCompile Include="Functor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mark.cpp" />
     <ClCompile Include="OfflineExam.cpp" />
@@ -142,6 +143,7 @@
     <ClInclude Include="CustomType.h" />
     <ClInclude Include="Exam.h" />
     <ClInclude Include="Faculty.h" />
+    <ClInclude Include="Functor.h" />
     <ClInclude Include="GraduatedApplicant.h" />
     <ClInclude Include="Mark.h" />
     <ClInclude Include="OfflineExam.h" />

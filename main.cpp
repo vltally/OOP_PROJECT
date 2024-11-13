@@ -21,6 +21,7 @@
 #include <queue>
 #include <functional>
 #include <numeric>
+#include "Functor.h"
 
 
 void mainMenu();
@@ -413,6 +414,37 @@ void main() {
     std::cout << "Reversed vector: ";
     for (int elem : vec3) std::cout << elem << " ";
     std::cout << std::endl;
+
+
+    Functor functor;
+
+    int a = 10, b = 5;
+
+  /*  void out(Functor c){
+        c.plus(a, b);
+        std::cout << a << endl;
+
+    };*/
+
+
+    
+    std::cout << "Plus: " << functor.plus(a, b) << std::endl;
+    std::cout << "Minus: " << functor.minus(a, b) << std::endl;
+    std::cout << "Multiply: " << functor.multiply(a, b) << std::endl;
+    std::cout << "Divide: " << functor.divide(a, b) << std::endl;
+    std::cout << "Modulus: " << functor.modulus(a, b) << std::endl;
+    std::cout << "Negate: " << functor.negate(a) << std::endl;
+
+    std::cout << "EqualTo: " << std::boolalpha << functor.equal_to(a, b) << std::endl;
+    std::cout << "NotEqualTo: " << functor.not_equal_to(a, b) << std::endl;
+    std::cout << "Greater: " << functor.greater(a, b) << std::endl;
+    std::cout << "Less: " << functor.less(a, b) << std::endl;
+    std::cout << "GreaterEqual: " << functor.greater_equal(a, b) << std::endl;
+    std::cout << "LessEqual: " << functor.less_equal(a, b) << std::endl;
+
+    std::cout << "LogicalAnd: " << functor.logical_and(true, false) << std::endl;
+    std::cout << "LogicalOr: " << functor.logical_or(true, false) << std::endl;
+    std::cout << "LogicalNot: " << functor.logical_not(true) << std::endl;
 
 
     system("pause");

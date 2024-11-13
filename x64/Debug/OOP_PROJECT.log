@@ -1,6 +1,13 @@
-﻿  main.cpp
+﻿  Admin.cpp
+C:\Users\vltally\Desktop\OOP_PROJECT\OOP_PROJECT\Faculty.h(7,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  (компиляция исходного файла "Admin.cpp")
+  
+  Assistant.cpp
+  Functor.cpp
+  main.cpp
 C:\Users\vltally\Desktop\OOP_PROJECT\OOP_PROJECT\Faculty.h(7,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
   (компиляция исходного файла "main.cpp")
   
+  Создание кода...
   Admin.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   OOP_PROJECT.vcxproj -> C:\Users\vltally\Desktop\OOP_PROJECT\x64\Debug\OOP_PROJECT.exe

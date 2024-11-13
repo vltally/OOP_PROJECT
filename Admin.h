@@ -12,30 +12,30 @@ private:
     std::string password;
 
 public:
-    // Конструктори
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     Admin();
     Admin(const std::string& username, const std::string& password);
 
-    // Віртуальна функція для виводу інформації
+    // ВіпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     void showInfo() const override;
 
-    // Методи для керування обліковим записом
+    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     void setUsername(const std::string& username);
     void setPassword(const std::string& password);
     std::string getUsername() const;
     std::string getPassword() const;
 
-    // Методи для управління системою
-    void addApplicant(Applicant& applicant);    // Додати абітурієнта до системи
-    void removeApplicant(Applicant& applicant); // Видалити абітурієнта із системи
+    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    void addApplicant(Applicant& applicant);    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    void removeApplicant(Applicant& applicant); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-    void addProfessor(Professor& professor);    // Додати викладача до системи
-    void removeProfessor(Professor& professor); // Видалити викладача із системи
+    void addProfessor(Professor& professor);    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    void removeProfessor(Professor& professor); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-    void createExam(Exam& exam);     // Створити іспит
-    void deleteExam(Exam& exam);     // Видалити іспит
+    void createExam(Exam& exam);     // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+    void deleteExam(Exam& exam);     // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
-    void manageFaculty(Faculty& faculty); // Керувати факультетами
+    void manageFaculty(Faculty& faculty); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     void Write(const std::string& filename) const override {
         
@@ -44,9 +44,9 @@ public:
     void Read(const std::string& filename) override {
        
     }
-    // Запис/читання даних з файлів
-    //void writeToFile(const std::string& filename); // Запис даних адміністратора в файл
-    //void readFromFile(const std::string& filename); // Читання даних адміністратора з файлу
+    // пїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
+    //void writeToFile(const std::string& filename); // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
+    //void readFromFile(const std::string& filename); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
 
 
 };

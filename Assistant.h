@@ -28,12 +28,12 @@ public:
 
     void Write(const std::string& filename) const override {
         std::cout << "Writing to file in Assistant class..." << std::endl;
-        // Реалізація збереження
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     }
 
     void Read(const std::string& filename) override {
         std::cout << "Read" << std::endl;
-        // Реалізація збереження
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     }
 
    
